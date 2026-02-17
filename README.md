@@ -21,4 +21,4 @@ npm run dev
 ```
 
 ## Live Demo
-Coming soon
+https://quote-generator-rho-woad.vercel.app/

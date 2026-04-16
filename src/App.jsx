@@ -1,27 +1,18 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react'; // Hint: You need this import
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // TODO: Create a state variable called 'quote' 
-  // Initialize it with the string: "Click the button to get a quote!"
-
-  // _______________________________________________________ <--- WRITE CODE HERE
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  // async means "This function takes time (waiting for internet)"
   async function fetchNewQuote() {
     setIsLoading(true);
 
-    // 1. The Request (Order the food)
     try {
       const response = await fetch("https://dummyjson.com/quotes/random");
-
-      // 2. The Response (Unpack the JSON food)
       const data = await response.json();
 
-      // 3. Update the State (Serve the food)
       setQuote(data.quote);
       setAuthor(data.author);
     } catch (error) {
@@ -29,9 +20,6 @@ function App() {
     } finally {
       setIsLoading(false);
     }
-
-    // Optional: Log it to see what the API gave us
-    // console.log(data);
   }
   function tweetQuote() {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + " - " + author)}`;
@@ -45,7 +33,6 @@ function App() {
       <h1>Quote of the Day</h1>
 
       <div className="card">
-        {/* We use the state variable here */}
         {isLoading ? (
           <p>Loading...</p>
         ) : (

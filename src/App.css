@@ -5,7 +5,7 @@
   padding: 2rem;
   text-align: center;
 
-  /* Flexbox Magic for Perfect Centering */
+  /* Flexbox Layout for Centering */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,8 +27,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  /* Beautiful Gradient Background */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Background */
+  background: #3b82f6;
 }
 
 /* 3. The Glass Card */
